@@ -7,9 +7,9 @@ export default function Footer() {
       <div className="container flex flex-col items-center gap-3 sm:flex-row sm:justify-between">
         <p>© {year} Your Name. All rights reserved.</p>
         <div className="flex gap-4">
-          <Link className="hover:underline" href="https://github.com/yourname" target="_blank" rel="noreferrer">GitHub</Link>
-          <Link className="hover:underline" href="https://x.com/yourhandle" target="_blank" rel="noreferrer">X</Link>
-          <Link className="hover:underline" href="https://www.linkedin.com/in/yourname" target="_blank" rel="noreferrer">LinkedIn</Link>
+          <Link className="link" href="https://github.com/yourname" target="_blank" rel="noreferrer">GitHub</Link>
+          <Link className="link" href="https://x.com/yourhandle" target="_blank" rel="noreferrer">X</Link>
+          <Link className="link" href="https://www.linkedin.com/in/yourname" target="_blank" rel="noreferrer">LinkedIn</Link>
         </div>
       </div>
     </footer>

@@ -1,41 +1,35 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* why: consistent spacing + buttons + nav styles reused across pages */
-@layer base {
-  :root {
-    --container: 1120px;
-  }
+/* helpers */
+:root { --container: 1100px; }
+html { scroll-behavior: smooth; }
+.container { width:100%; max-width:var(--container); margin-inline:auto; padding-inline:1rem; }
 
-  html {
-    scroll-behavior: smooth;
-  }
+/* text colors */
+.muted { color: rgb(82 82 82); }
+.dark .muted { color: rgb(212 212 212); }
 
-  .container {
-    width: 100%;
-    max-width: var(--container);
-    margin-inline: auto;
-    padding-inline: 1rem;
-  }
+/* components with explicit bg/border for dark */
+.card { border:1px solid rgb(229 229 229); border-radius:1rem; padding:1.25rem; box-shadow:0 1px 2px rgb(0 0 0 / 0.05); }
+.dark .card { border-color: rgb(38 38 38); background: rgb(23 23 23); }
 
-  .btn-primary {
-    @apply inline-flex items-center justify-center rounded-lg bg-black px-4 py-2 text-white transition hover:opacity-90 dark:bg-white dark:text-black;
-  }
+.chip { display:inline-flex; align-items:center; border:1px solid rgb(212 212 212); border-radius:.5rem; padding:.125rem .5rem; font-size:.75rem; }
+.dark .chip { border-color: rgb(64 64 64); }
 
-  .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-lg border px-4 py-2 transition hover:bg-neutral-100 dark:border-neutral-800 dark:hover:bg-neutral-900;
-  }
+/* buttons */
+.btn { display:inline-flex; align-items:center; justify-content:center; border-radius:.5rem; padding:.5rem 1rem; font-weight:500; transition:opacity .15s; }
+.btn-primary { background:black; color:white; }
+.btn-primary:hover { opacity:.9; }
+.dark .btn-primary { background:white; color:black; }
 
-  .nav-link {
-    @apply rounded-lg px-3 py-1.5 text-sm transition hover:bg-neutral-100 dark:hover:bg-neutral-900;
-  }
-  .nav-active {
-    @apply bg-neutral-100 dark:bg-neutral-900;
-  }
-}
+.btn-secondary { border:1px solid rgb(212 212 212); }
+.btn-secondary:hover { background: rgb(245 245 245); }
+.dark .btn-secondary { border-color: rgb(64 64 64); }
+.dark .btn-secondary:hover { background: rgb(23 23 23); }
 
-/* Typography */
-.prose :where(code):not(:where([class~="not-prose"] *)) {
-  @apply rounded bg-neutral-100 px-1.5 py-0.5 text-[0.9em] dark:bg-neutral-900;
-}
+/* nav links */
+.nav-link { border-radius:.5rem; padding:.5rem .75rem; font-size:.875rem; }
+.nav-link:hover { background: rgb(245 245 245); }
+.dark .nav-link:hover { background: rgb(23 23 23); }
+.nav-active { background: rgb(245 245 245); }
+.dark .nav-active { background: rgb(23 23 23); }

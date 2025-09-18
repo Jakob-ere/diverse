@@ -1,6 +1,6 @@
 import type { PropsWithChildren } from "react";
-import clsx from "clsx";
+import { cn } from "@/lib/cn";
 
 export default function Section({ children, className }: PropsWithChildren<{ className?: string }>) {
-  return <section className={clsx("container py-10 sm:py-12", className)}>{children}</section>;
+  return <section className={cn("container py-12 sm:py-16", className)}>{children}</section>;
 }
